@@ -72,16 +72,16 @@ public class DTSConsumerAssignDemo {
     }
 
     public static void main(String[] args) {
-// kafka broker url
-        String brokerUrl = "dts-cn-hangzhou.aliyuncs.com:18001";
+        // kafka broker url
+        String brokerUrl = "your broker url";
         // topic to consume, partition is 0
-        String topic = "cn_hangzhou_vpc_rm_bp148ecac4w99l3l1_dts_version2";
+        String topic = "your dts topic";
         // user password and sid for auth
-        String sid = "dtsozh109lm140726f";
-        String userName = "dts";
-        String password = "DTStest1234";
+        String sid = "your sid";
+        String userName = "your user name";
+        String password = "your password";
         // initial checkpoint for first seek(a timestamp to set, eg 1566180200 if you want (Mon Aug 19 10:03:21 CST 2019))
-        String initCheckpoint = "1752656225";
+        String initCheckpoint = "start timestamp";
         // when use subscribe mode, group config is required. kafka consumer group is enabled
         ConsumerContext.ConsumerSubscribeMode subscribeMode = ConsumerContext.ConsumerSubscribeMode.ASSIGN;
         // if force use config checkpoint when start. for checkpoint reset, only assign mode works
