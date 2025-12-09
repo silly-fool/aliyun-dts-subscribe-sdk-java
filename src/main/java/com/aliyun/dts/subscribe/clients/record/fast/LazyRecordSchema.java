@@ -310,7 +310,15 @@ public class LazyRecordSchema implements RecordSchema {
 
     @Override
     public String toString() {
-        return getDatabaseName().get() + "." + getTableName().get();
+        String databaseName = getDatabaseName().orElse("");
+        String tableName = getTableName().orElse("");
+        if (!databaseName.isEmpty() && !tableName.isEmpty()) {
+            return databaseName + "." + tableName;
+        } else if (!databaseName.isEmpty()) {
+            return databaseName;
+        } else {
+            return tableName;
+        }
     }
 
     @Override
