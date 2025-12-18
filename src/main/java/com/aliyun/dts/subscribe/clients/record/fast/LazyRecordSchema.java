@@ -312,13 +312,13 @@ public class LazyRecordSchema implements RecordSchema {
     public String toString() {
         String databaseName = getDatabaseName().orElse("");
         String tableName = getTableName().orElse("");
-        if (!databaseName.isEmpty() && !tableName.isEmpty()) {
-            return databaseName + "." + tableName;
-        } else if (!databaseName.isEmpty()) {
-            return databaseName;
-        } else {
-            return tableName;
-        }
+        return "{"
+                + ", \nrecordFields= " + getFields() + ""
+                + ", \ndatabaseName='" + databaseName + '\''
+                + ", \ntableName='" + tableName + '\''
+                + ", \nprimaryIndexInfo [" + getPrimaryIndexInfo() + "]"
+                + ", \nuniqueIndexInfo [" + getUniqueIndexInfo() + "]"
+                + '}';
     }
 
     @Override
