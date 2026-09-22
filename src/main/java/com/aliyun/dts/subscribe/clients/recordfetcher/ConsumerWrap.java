@@ -69,7 +69,7 @@ public abstract class ConsumerWrap implements Closeable {
             if (null == toSet) {
                 log.warn("Failed seek timestamp for topic [" + topicPartition + "] with timestamp [" + timeStamp + "] failed");
                 if (isCheckpointNotExistThrowException) {
-                    throw new RuntimeException("Failed seek timestamp for topic [\" + topicPartition + \"] with timestamp [\" + timeStamp + \"] failed");
+                    throw new RuntimeException("Failed seek timestamp for topic [" + topicPartition + "] with timestamp [" + timeStamp + "] failed");
                 } else {
                     log.warn("Set to beginning");
                     consumer.seekToBeginning(Collections.singleton(topicPartition));
